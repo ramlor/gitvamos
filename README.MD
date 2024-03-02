@@ -4,15 +4,28 @@ Este trabajo final se realizo mediante nodejs,express
 # # Instalacion
 
 'git clone https://github.com/ramlor/gitvamos.git'
- 'cd vamos'
- 'docker-compose up -d'
+'cd vamos'
+'docker-compose up -d'
 
  # # Contacto
  lorena.ramos@itscordoba.edu.ar
+version: "2.1"
+services:
+  sqlitebrowser:
+    image: lscr.io/linuxserver/sqlitebrowser:latest
+    container_name: sqlitebrowser
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 3000:3000
+    restart: unless-stopped
 
 
-
-
+# # Procedimientos realizados para crear el proyecto
 CARPETAS 
 1_BIN:
 servivio web que se encarga de responder 
