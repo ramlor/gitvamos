@@ -407,3 +407,105 @@ lorena@lorena-h55ms2v:~/vamos$ git checkout feature/personas
 Cambiado a rama 'feature/personas'
 lorena@lorena-h55ms2v:~/vamos$ 
 
+
+
+## IMAGEN DOCKER
+
+lorena@lorena-h55ms2v:~/vamos$ docker login -u loreits/crudnodejs
+Password: 
+Error response from daemon: Get "https://registry-1.docker.io/v2/": unauthorized: incorrect username or password
+lorena@lorena-h55ms2v:~/vamos$ docker image ls
+REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    9c7a54a9a43c   10 months ago   13.3kB
+lorena@lorena-h55ms2v:~/vamos$ docker build -t loreits/crudnodejs:1.0 .
+[+] Building 27.1s (9/9) FINISHED                             docker:default
+ => [internal] load build definition from Dockerfile                    0.5s
+ => => transferring dockerfile: 121B                                    0.0s
+ => [internal] load metadata for docker.io/library/node:18-slim         2.9s
+ => [internal] load .dockerignore                                       0.3s
+ => => transferring context: 2B                                         0.0s
+ => [1/4] FROM docker.io/library/node:18-slim@sha256:7642244621c75012  11.3s
+ => => resolve docker.io/library/node:18-slim@sha256:7642244621c75012a  0.2s
+ => => sha256:7642244621c75012ab49a03156639537fd7ab654 1.21kB / 1.21kB  0.0s
+ => => sha256:4b0f3d811ff3b3636eaba9ff0cc300d4977fa4de 1.37kB / 1.37kB  0.0s
+ => => sha256:563795a7d8518a67cdbfa6e2b16df86945e0d0ae 7.62kB / 7.62kB  0.0s
+ => => sha256:e1caac4eb9d2ec24aa3618e5992208321a9249 29.12MB / 29.12MB  2.2s
+ => => sha256:6e4d260b7fd8f82e7e2c52fe4ad99468397055eb 3.35kB / 3.35kB  1.2s
+ => => sha256:4710d45b431c340bb138d9f958216de60ae842 38.57MB / 38.57MB  3.8s
+ => => extracting sha256:e1caac4eb9d2ec24aa3618e5992208321a92492aef5fe  2.6s
+ => => sha256:346c1f9a56bddf7d296ef6dd069ebe21142b3a4d 2.67MB / 2.67MB  4.0s
+ => => sha256:bca7b3bb079fd08a17860905ac43633c94d5037f4de3 452B / 452B  4.7s
+ => => extracting sha256:6e4d260b7fd8f82e7e2c52fe4ad99468397055eb2e489  0.0s
+ => => extracting sha256:4710d45b431c340bb138d9f958216de60ae84265b6ffc  2.5s
+ => => extracting sha256:346c1f9a56bddf7d296ef6dd069ebe21142b3a4dcdc38  0.2s
+ => => extracting sha256:bca7b3bb079fd08a17860905ac43633c94d5037f4de3d  0.0s
+ => [internal] load build context                                       5.5s
+ => => transferring context: 13.61MB                                    4.9s
+ => [2/4] WORKDIR /app                                                  3.5s
+ => [3/4] COPY . /app                                                   1.6s
+ => [4/4] RUN npm install                                               5.2s
+ => exporting to image                                                  0.9s
+ => => exporting layers                                                 0.9s
+ => => writing image sha256:618e52a4aa1f0f5e404089b591402049f7486006c2  0.0s
+ => => naming to docker.io/loreits/crudnodejs:1.0                       0.1s
+lorena@lorena-h55ms2v:~/vamos$ docker push loreits/crudnodejs:1.0
+The push refers to repository [docker.io/loreits/crudnodejs]
+2f273f42f751: Preparing 
+5ec6a63c523c: Preparing 
+a913260235b2: Preparing 
+7c0b4acdf325: Preparing 
+864a2e9512f8: Preparing 
+91875cfadb69: Waiting 
+b1cf80d308ef: Waiting 
+ceb365432eec: Waiting 
+denied: requested access to the resource is denied
+lorena@lorena-h55ms2v:~/vamos$ docker build -t loreits/crudnodejs:1.0 .
+[+] Building 9.7s (9/9) FINISHED                              docker:default
+ => [internal] load build definition from Dockerfile                    0.1s
+ => => transferring dockerfile: 121B                                    0.0s
+ => [internal] load metadata for docker.io/library/node:18-slim         1.5s
+ => [internal] load .dockerignore                                       0.1s
+ => => transferring context: 2B                                         0.0s
+ => [1/4] FROM docker.io/library/node:18-slim@sha256:7642244621c75012a  0.0s
+ => [internal] load build context                                       0.4s
+ => => transferring context: 117.17kB                                   0.1s
+ => CACHED [2/4] WORKDIR /app                                           0.0s
+ => [3/4] COPY . /app                                                   1.3s
+ => [4/4] RUN npm install                                               4.6s
+ => exporting to image                                                  0.9s
+ => => exporting layers                                                 0.8s
+ => => writing image sha256:36c958f834e3ddef75869864cbcc9bc26ead7a0f89  0.0s
+ => => naming to docker.io/loreits/crudnodejs:1.0                       0.1s
+lorena@lorena-h55ms2v:~/vamos$ git commit -m "Fin"
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+        modificados:     docker-compose.yml
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+        Dockerfile
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+lorena@lorena-h55ms2v:~/vamos$ git add .
+lorena@lorena-h55ms2v:~/vamos$ git commit -m "Fin"
+[master b655b52] Fin
+ 2 files changed, 22 insertions(+), 1 deletion(-)
+ create mode 100644 Dockerfile
+lorena@lorena-h55ms2v:~/vamos$ git push origin master
+Enumerando objetos: 6, listo.
+Contando objetos: 100% (6/6), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (4/4), listo.
+Escribiendo objetos: 100% (4/4), 564 bytes | 564.00 KiB/s, listo.
+Total 4 (delta 2), reusado 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ramlor/gitvamos.git
+   30dee63..b655b52  master -> master
+lorena@lorena-h55ms2v:~/vamos$ git push origin  v1.0
+Everything up-to-date
+lorena@lorena-h55ms2v:~/vamos$ git status
+En la rama master
+nada para hacer commit, el árbol de trabajo está limpio
+lorena@lorena-h55ms2v:~/vamos$
