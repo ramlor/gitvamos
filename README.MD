@@ -308,4 +308,102 @@ npm notice Run npm install -g npm@10.4.0 to update!
 npm notice 
 lorena@lorena-h55ms2v:~/vamos$ 
 
+# # ARCHIVO: Docker-compose
+
+lorena@lorena-h55ms2v:~/vamos$ git init
+Inicializado repositorio Git vacío en /home/lorena/vamos/.git/
+lorena@lorena-h55ms2v:~/vamos$ git remote add origin https://github.com/ramlor/gitvamos.git
+lorena@lorena-h55ms2v:~/vamos$ git status
+En la rama master
+
+No hay commits todavía
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+        .gitignore
+        README.MD
+        app.js
+        bin/
+        package-lock.json
+        package.json
+        persona.db
+        public/
+        routes/
+        views/
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
+lorena@lorena-h55ms2v:~/vamos$ git add .
+lorena@lorena-h55ms2v:~/vamos$ git commit -m "comenzando proyecto"
+[master (commit-raíz) c07bef4] comenzando proyecto
+ 18 files changed, 2602 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 README.MD
+ create mode 100644 app.js
+ create mode 100755 bin/www
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 persona.db
+ create mode 100644 public/stylesheets/style.css
+ create mode 100644 routes/index.js
+ create mode 100644 routes/users.js
+ create mode 100644 views/agregar.ejs
+ create mode 100644 views/busqueda.ejs
+ create mode 100644 views/delete.ejs
+ create mode 100644 views/edit.ejs
+ create mode 100644 views/error.ejs
+ create mode 100644 views/index.ejs
+ create mode 100644 views/personas.ejs
+ create mode 100644 views/resultados.ejs
+lorena@lorena-h55ms2v:~/vamos$ git origin master
+git: 'origin' no es un comando de git. Mira 'git --help'.
+lorena@lorena-h55ms2v:~/vamos$ git push origin master
+Enumerando objetos: 25, listo.
+Contando objetos: 100% (25/25), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (21/21), listo.
+Escribiendo objetos: 100% (25/25), 27.37 KiB | 3.42 MiB/s, listo.
+Total 25 (delta 1), reusado 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/ramlor/gitvamos.git
+ * [new branch]      master -> master
+lorena@lorena-h55ms2v:~/vamos$ git commit -m "actualizado"
+En la rama master
+Cambios no rastreados para el commit:
+  (usa "git add <archivo>..." para actualizar lo que será confirmado)
+  (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+        modificados:     README.MD
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+        docker-compose.yml
+
+sin cambios agregados al commit (usa "git add" y/o "git commit -a")
+lorena@lorena-h55ms2v:~/vamos$ git add .
+lorena@lorena-h55ms2v:~/vamos$ git commit -m "actualizado"
+[master 1e294ac] actualizado
+ 2 files changed, 33 insertions(+), 6 deletions(-)
+ create mode 100644 docker-compose.yml
+lorena@lorena-h55ms2v:~/vamos$ git push origin master
+Enumerando objetos: 6, listo.
+Contando objetos: 100% (6/6), listo.
+Compresión delta usando hasta 4 hilos
+Comprimiendo objetos: 100% (4/4), listo.
+Escribiendo objetos: 100% (4/4), 806 bytes | 806.00 KiB/s, listo.
+Total 4 (delta 2), reusado 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ramlor/gitvamos.git
+   c07bef4..1e294ac  master -> master
+lorena@lorena-h55ms2v:~/vamos$ git branch feature/personas
+lorena@lorena-h55ms2v:~/vamos$ git checout
+git: 'checout' no es un comando de git. Mira 'git --help'.
+
+El comando más similar es
+        checkout
+lorena@lorena-h55ms2v:~/vamos$ git checkout
+lorena@lorena-h55ms2v:~/vamos$ git branch feature/personas
+fatal: Una rama llamada 'feature/personas' ya existe.
+lorena@lorena-h55ms2v:~/vamos$ git checkout
+lorena@lorena-h55ms2v:~/vamos$ git checkout feature/personas
+Cambiado a rama 'feature/personas'
+lorena@lorena-h55ms2v:~/vamos$ 
 
