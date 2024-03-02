@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lista </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Lista de personas</h1>
+    <ul>
+      <% personas.forEach(element => { %>
+       <li>
+        <%= element.nombre%>
+       </li>
+      <% }) %>
+
+    </ul>
+  </body>
+</html>
+/* aqui me muestra los campo nombre*/
