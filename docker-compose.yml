@@ -1,3 +1,4 @@
+
 version: "2.1"
 services:
   sqlitebrowser:
@@ -12,3 +13,16 @@ services:
     ports:
       - 3000:3000
     restart: unless-stopped
+    
+    # Servicio de la aplicación Node.js
+  node_app:
+    image: loreits/crudnodejs:1.0
+    container_name: mi_app_node
+    ports:
+      - "3000:3000"    
+    depends_on:
+      - mysql
+    networks:
+      - my_network
+
+
