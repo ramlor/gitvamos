@@ -44,7 +44,7 @@ router.get('/edit/:id', function(req, res, next) {
             console.error(err);
             return;
         }
-        res.render('edit', {item: row });
+        res.render('edit', { item: row });
     });
 });
 
