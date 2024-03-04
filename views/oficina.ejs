@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>oficina </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Lista de oficinas</h1>
+    <ul>
+      <% oficina.forEach(element => { %>
+       <li>
+        <%= element.denominacion%>
+       </li>
+      <% }) %>
+
+    </ul>
+  </body>
+</html>

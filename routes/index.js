@@ -87,6 +87,63 @@ router.post('/resultados', function (req, res, next) {
     });
 });
 
+/* TABLA OFICINA */
+
+router.get('/oficina',function (req, res, next){
+    const db = req.app.get("db");
+    const query = "SELECT * from oficina";
+    db.all(query, function(err, rows) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        res.render("oficina", { oficina: rows });
+    })
+});
+
+/* solicita informacion*/ 
+router.get('/agregaroficina', function(req, res, next) {
+    res.render('agregaroficina', { });
+});
+
+router.post("/agregaroficina",function(req, res, next) {
+    const db = req.app.get("db");
+    const denominacion = req.body.denominacion;
+    const query = "INSERT into oficina (denominacion) VALUES (?)";
+    db.run(query, [denominacion], function(err) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        res.redirect("/oficina");
+    });
+});
+/* cambia una persona mediante su id */
+router.get('/editoficina/:id', function(req, res, next) {
+    var db = req.app.get('db');
+    var id = req.params.id;
+    db.get("SELECT * FROM oficina WHERE id=?", id, function(err, row) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.render('editoficina', { item: row });
+    });
+});
+
+router.post('/updateoficina/:id',function(req, res, next) {
+    var db = req.app.get('db');
+    var id = req.params.id;
+    var denominacion = req.body.denominacion;
+    db.run("UPDATE oficina SET denominacion=? WHERE id=?", [denominacion, id], function(err) {
+    
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.redirect('/oficina');
+    });
+});
 
 
 module.exports = router;
