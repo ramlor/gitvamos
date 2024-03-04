@@ -5,17 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
-  
-  
-<body>
-  <h1>
-    <%= title %>
-  </h1>
-  <ul>
-    <% oficinas.forEach(element => { %>
-     <li>
-        <%= element.nombre %>
-     </li>
-    <% }) %>
-  </ul>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+        <% oficinas.forEach(oficina => { %>
+            <li>
+                <strong>Nombre:</strong> <%= oficina.nombre %><br>
+                <strong>Denominación:</strong> <%= oficina.denominacion %>
+            </li>
+        <% }); %>
+    </ul>
 </body>
+</html> 
+  
+
