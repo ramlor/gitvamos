@@ -87,7 +87,7 @@ router.post('/resultados', function (req, res, next) {
     });
 });
 
-/* TABLA OFICINA */
+ /* TABLA OFICINA */                                   /* TABLA OFICINA */
 
 router.get('/oficina',function (req, res, next){
     const db = req.app.get("db");
@@ -118,7 +118,7 @@ router.post("/agregaroficina",function(req, res, next) {
         res.redirect("/oficina");
     });
 });
-/* cambia una persona mediante su id */
+/* cambia oficina mediante su id */
 router.get('/editoficina/:id', function(req, res, next) {
     var db = req.app.get('db');
     var id = req.params.id;
@@ -144,6 +144,18 @@ router.post('/updateoficina/:id',function(req, res, next) {
         res.redirect('/oficina');
     });
 });
+router.get('/personaxoficina', function (req, res, next)  {
+    res.render('personaxoficina', { title: "Buscar Oficina" });
+});
 
+router.post('/oficinaresultados', function (req, res, next) {
+    const db = req.app.get("db");
+    const keyword = req.body.keyword;
+    const query = 'SELECT * FROM persona.nombre,oficina.denominacion FROM persona JOIN oficina  WHERE persona.oficina_id = oficina.id ';
+    db.all(query, [`%${keyword}%`], (err, rows) => {
+        if (err) throw err;
+            res.render('oficinaresultados', { oficinas: rows, title: "Resultados" })
+    });
+});
 
 module.exports = router;
