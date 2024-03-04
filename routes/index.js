@@ -53,7 +53,7 @@ router.post('/update/:id',function(req, res, next) {
     var id = req.params.id;
     var nombre = req.body.nombre;
     var email = req.body.email; // Obtén la descripción del formulario
-    db.get("UPDATE persona SET nombre=?, email=? WHERE id=?", [nombre, email, id], function(err) {
+    db.run("UPDATE persona SET nombre=?, email=? WHERE id=?", [nombre, email, id], function(err) {
         if (err) {
             console.error(err);
             return;
