@@ -1,32 +1,19 @@
 # TRABAJO FINAL DE PRACTICA I : CRUD APP 
-Este trabajo final se realizo mediante nodejs,express
+Este trabajo final de la materia Practica I,  se realizo mediante nodejs,express, java scrip y sqlite browser.
 
-# # Instalacion
+## Instalacion
 
 'git clone https://github.com/ramlor/gitvamos.git'
+
 'cd vamos'
+
 'docker-compose up -d'
 
- # # Contacto
+ ## Contacto
  lorena.ramos@itscordoba.edu.ar
-version: "2.1"
-services:
-  sqlitebrowser:
-    image: lscr.io/linuxserver/sqlitebrowser:latest
-    container_name: sqlitebrowser
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    volumes:
-      - /path/to/config:/config
-    ports:
-      - 3000:3000
-    restart: unless-stopped
-
 
 # # Procedimientos realizados para crear el proyecto
-CARPETAS 
+'CARPETAS 
 1_BIN:
 servivio web que se encarga de responder 
 2_PUBLIC:
@@ -44,11 +31,11 @@ APP.JS
 express genera un require que se pide para 
 ***Luego se genera la carpeta 
 NODE_MODULES
-codigo reutilizable, que son dependenicas que satisface lo que solicita package.json
+codigo reutilizable, que son dependenicas que satisface lo que solicita package.json'
 
 
 
-lorena@lorena-h55ms2v:~$ sudo apt install nodejs
+'lorena@lorena-h55ms2v:~$ sudo apt install nodejs
 [sudo] contraseña para lorena: 
 Leyendo lista de paquetes... Hecho
 Creando árbol de dependencias       
@@ -78,9 +65,9 @@ update-alternatives: utilizando /usr/bin/nodejs para proveer /usr/bin/js (js) en
 Procesando disparadores para man-db (2.9.1-1) ...
 N: Omitiendo fichero «anydesk-stable» del directorio «/etc/apt/sources.list.d/», ya que no tiene extensión de nombre de fichero
 lorena@lorena-h55ms2v:~$ sudo npm install express-generator -g
-ERROR: npm v10.4.0 is known not to run on Node.js v10.19.0.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.
+ERROR: npm v10.4.0 is known not to run on Node.js v10.19.0.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.'
 
-ERROR:
+'ERROR:
 /usr/local/lib/node_modules/npm/lib/utils/exit-handler.js:19
   const hasLoadedNpm = npm?.config.loaded
                            ^
@@ -96,9 +83,9 @@ SyntaxError: Unexpected token .
     at module.exports (/usr/local/lib/node_modules/npm/lib/cli-entry.js:15:23)
     at module.exports (/usr/local/lib/node_modules/npm/lib/es6/validate-engines.js:39:10)
     at module.exports (/usr/local/lib/node_modules/npm/lib/cli.js:4:31)
-lorena@lorena-h55ms2v:~$ express --view=ejs vamos
+lorena@lorena-h55ms2v:~$ express --view=ejs vamos'
                                                                                                                                         
-   create : vamos/
+   'create : vamos/
    create : vamos/public/
    create : vamos/public/javascripts/
    create : vamos/public/images/
@@ -167,9 +154,9 @@ ERROR: npm v10.4.0 is known not to run on Node.js v10.19.0.  This version of npm
 ERROR:
 /usr/local/lib/node_modules/npm/lib/utils/exit-handler.js:19
   const hasLoadedNpm = npm?.config.loaded
-                           ^
+                           ^'
 
-SyntaxError: Unexpected token .
+'SyntaxError: Unexpected token .
     at Module._compile (internal/modules/cjs/loader.js:723:23)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
     at Module.load (internal/modules/cjs/loader.js:653:32)
@@ -180,9 +167,9 @@ SyntaxError: Unexpected token .
     at module.exports (/usr/local/lib/node_modules/npm/lib/cli-entry.js:15:23)
     at module.exports (/usr/local/lib/node_modules/npm/lib/es6/validate-engines.js:39:10)
     at module.exports (/usr/local/lib/node_modules/npm/lib/cli.js:4:31)
-=> Close and reopen your terminal to start using nvm or run the following to use it now:
+=> Close and reopen your terminal to start using nvm or run the following to use it now:'
 
-export NVM_DIR="$HOME/.config/nvm"
+'export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 lorena@lorena-h55ms2v:~/vamos$ source ~/.bashrc
@@ -253,7 +240,7 @@ Resolviendo deltas: 100% (43/43), listo.
 
 => Appending nvm source string to /home/lorena/.bashrc
 => Appending bash_completion source string to /home/lorena/.bashrc
-ERROR: npm v10.4.0 is known not to run on Node.js v10.19.0.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.
+ERROR: npm v10.4.0 is known not to run on Node.js v10.19.0.  This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`. You can find the latest version at https://nodejs.org/.'
 
 ERROR:
 /usr/local/lib/node_modules/npm/lib/utils/exit-handler.js:19
