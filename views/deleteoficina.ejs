@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+    <body>
+        <h1>Confirma que desea eliminar esa oficina?</h1>
+        <form action="/deleteoficina/<%= item.id %>" method="post">
+            <button type="submit">Confirmar</button>
+        </form>
+
+    </body>
+
+</html>

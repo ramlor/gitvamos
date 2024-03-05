@@ -160,4 +160,17 @@ router.post('/oficinaresultados', function (req, res, next) {
         res.render('oficinaresultados', { oficinas: rows, title: "Resultados" });
     });
 });
+
+router.get('/delete/:id', function(req, res, next) {
+    var db = req.app.get('db');
+    var id = req.params.id;
+    db.run("DELETE FROM oficina WHERE id=?", id, function(err) {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        res.redirect('/oficina');
+    });
+});
+
 module.exports = router;
