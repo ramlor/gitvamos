@@ -1,10 +1,13 @@
 
 <!DOCTYPE html>
 <html>
-    <%- include('./head.ejs') %>
+    <head>
+        <title>Lista de Oficinas </title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+      </head>
  
     <body>
-    <%- include('./navigation.ejs') %>
+      <%- include('./navigation.ejs') %>
         <h1>Nueva oficina</h1>
         <form action="/agregaroficina" method="post">
             <input type="text" name="denominacion" placeholder="Oficina">
