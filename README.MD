@@ -30,6 +30,7 @@ Los programas y/o recursos que se utilzo son: nodejs,express, java scrip, docker
 
 
 # # Estructura del Proyecto
+'El proyecto cuenta con 5 carpetas fundamentales creadas con el express, acontinuacion se detalla brevemente el contenido de las mismas'
 'CARPETAS 
 1_BIN:
 servivio web que se encarga de responder 
@@ -44,15 +45,19 @@ De aqui  suerge el MVC son las plantillas dinamicas.Tiene un modelo similar al h
 index.js: plantilla que se genera
 5_PAKAGE.JSON
 Aqui van mis dependencias, las cuales voy a ir instalando.(node_modules)
-APP.JS
-express genera un require que se pide para 
+APP.JS:
+es el archivo que genera express desde aqui llego al resto de mi proyecto.
 ***Luego se genera la carpeta 
 NODE_MODULES
 codigo reutilizable, que son dependenicas que satisface lo que solicita package.json'
 
-## 
+## Reversionado
+Se puede encontrar las versiones en : docker push loreits/crudnodejs:tagname
+o ingresar a https://hub.docker.com/repository/docker/loreits/crudnodejs/general 
+para colaborar con el reversionado del proyecto.
 
  ## Contacto
+ 
  Alumna: Ramos Lorena
 
  lorena.ramos@itscordoba.edu.ar 

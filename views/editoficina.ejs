@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Editar Oficina </title>
-</head>
-<body>
-  <h1>Editar Oficina</h1>
-  <form action="/updateoficina/<%= item.id %>" method="post">
-    <input type="text" name="denominacion" value="<%= item.denominacion %>" required>
-    <button type="submit">Modificar</button>
-  </form>
-</body>
-</html>
+  <%- include('./head.ejs') %>
+
+  <body>
+    <h1>Editar Oficina</h1>
+    <form action="/updateoficina/<%= item.id %>" method="post">
+      <input type="text" name="denominacion" value="<%= item.denominacion %>" required>
+      <button type="submit">Modificar</button>
+    </form>
+  </body>
+  </html>

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Editar Persona</title>
-</head>
-<body>
-  <h1>Edit Persona</h1>
-  <form action="/update/<%= item.id %>" method="post">
-    <input type="text" name="nombre" value="<%= item.nombre %>" required>
-    <input type="text" name="email" value="<%= item.email %>" required>
-    <button type="submit">Update</button>
-  </form>
-</body>
+<%- include('./head.ejs') %>
+    <body>
+      <h1>Edit Persona</h1>
+      <form action="/update/<%= item.id %>" method="post">
+        <input type="text" name="nombre" value="<%= item.nombre %>" required>
+        <input type="text" name="email" value="<%= item.email %>" required>
+        <button type="submit">Update</button>
+      </form>
+    </body>
 </html>
