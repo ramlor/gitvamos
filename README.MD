@@ -1,18 +1,36 @@
-# TRABAJO FINAL DE PRACTICA I : CRUD APP 
-Este trabajo final de la materia Practica I,  se realizo mediante nodejs,express, java scrip y sqlite browser.
+# TRABAJO FINAL DE PRACTICA I : APP CRUD
+Trabajo final de la materia Practica I, dictada por el profesor Luis Romano de la Tecnicatura Desarrollo de Software.
+La aplicacion esta dividida en tres versiones:
+1_ Tabla y funcionalidades de Persona.
+2_ Tabla y funcionalidades de Oficina.
+3_ Repositorio subido a Docker-hub.
+Con el fin de poder administrar datos basicos de personas y oficina a las cuales pertenece cada uno.
+
+Los programas y/o recursos que se utilzo son: nodejs,express, java scrip, docker y sqlite browser.
+
+## Requisitos previos
+1_contar con sistema operativo Linux o Windows
+2_Tener conexion a Internet
+3_Tener instalado o bajar sqlBrowser,Docker,Visual Studio Code,etc.
 
 ## Instalacion
+1_Clona el repositorio:
 
 'git clone https://github.com/ramlor/gitvamos.git'
 
+2_Instala las dependencias:
+
 'cd vamos'
+
+'npm install'
+
+3_Configura cualquier archivo de entorno necesario.Ejemplo
 
 'docker-compose up -d'
 
- ## Contacto
- lorena.ramos@itscordoba.edu.ar
 
-# # Procedimientos realizados para crear el proyecto
+
+# # Estructura del Proyecto
 'CARPETAS 
 1_BIN:
 servivio web que se encarga de responder 
@@ -34,7 +52,10 @@ NODE_MODULES
 codigo reutilizable, que son dependenicas que satisface lo que solicita package.json'
 
 
+ ## Contacto
+ lorena.ramos@itscordoba.edu.ar
 
+ ### Errores a tener en cuenta y como solucionar 
 'lorena@lorena-h55ms2v:~$ sudo apt install nodejs
 [sudo] contraseña para lorena: 
 Leyendo lista de paquetes... Hecho

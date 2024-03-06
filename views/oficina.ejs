@@ -5,36 +5,34 @@
     <title> Oficina </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+ 
+<body>
+  <%- include('./navigation.ejs') %>
+      <h1>Nueva oficina</h1>
+      <form action="/agregaroficina" method="post">
+          <input type="text" name="denominacion" placeholder="Oficina">
+          <button type="submit">Agregar</button>
+      </form>
+      <h1>Lista de oficinas</h1>
+      <div class="container">
+          <% oficina.forEach(element => { %>
+              <div class="row">
+                  <div class="col-md-4 mt-4">
+                      <%= element.denominacion %>
+                  </div>
+                  <div class="col-md-4 mt-4">
+                      <a class="btn btn-primary" href="/editOficina/<%= element.id %>" role="button">Editar</a>
+                      <a class="btn btn-primary" href="/deleteoficina/<%= element.id %>" role="button">Borrar</a>
+                  </div>
+              </div>
+              <% }) %>
+
+      </div>
 
 
-  <body>
-    <%- include('./navigation.ejs') %>
-            <h1>Lista de Oficinas</h1> <a href="/agregaroficina" class="btn btn-primary">Agregar</a>
-            
-            
-            <div class="container">
-                <% oficina.forEach(element => { %>
-                    <div class="row">
-                        <div class="col-md-3 mt-4">
-                            <%= element.denominacion %>
-                        </div>
-                        <div class="col-md-3 mt-4">
-                            
-                        </div>
-                        <div class="col-md-3 mt-4">
-                            <a class="btn btn-primary" href="/editoficina/<%= element.id %>" role="button">Editar</a>
-                            <a class="btn btn-primary" href="/deleteoficina/<%= element.id %>" role="button">Borrar</a>
-                            
-                        </div>
-                    </div>
-                    <% }) %>
+      <ul>
 
-            </div>
-
-
-            <ul>
-
-            </ul>
-  </body>
+      </ul>
+</body>
 
 </html>
