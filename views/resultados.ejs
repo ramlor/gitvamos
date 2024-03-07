@@ -13,7 +13,11 @@
   <ul>
     <% personas.forEach(element => { %>
      <li>
-        <%= element.nombre %>
+      
+        <p>Nombre: <%= element.nombre  %></p> 
+        <p>Email: <%= element.email %></p> 
+        <p>Oficina: <%= element.denominacion %></p>
+
      </li>
     <% }) %>
   </ul>

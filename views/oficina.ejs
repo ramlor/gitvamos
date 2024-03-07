@@ -13,6 +13,7 @@
             <input type="text" name="denominacion" placeholder="Oficina">
             <button type="submit">Agregar</button>
         </form>
+    
         <h1>Lista de oficinas</h1>
         <div class="container">
             <% oficina.forEach(element => { %>
@@ -21,7 +22,7 @@
                         <%= element.denominacion %>
                     </div>
                     <div class="col-md-4 mt-4">
-                        <a class="btn btn-primary" href="/editOficina/<%= element.id %>" role="button">Editar</a>
+                        <a class="btn btn-primary" href="/editoficina/<%= element.id %>" role="button">Editar</a>
                         <a class="btn btn-primary" href="/deleteoficina/<%= element.id %>" role="button">Borrar</a>
                     </div>
                 </div>

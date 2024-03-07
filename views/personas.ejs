@@ -8,11 +8,14 @@
     <body>
         <%- include('./navigation.ejs') %>
             <h1> Agregar Persona</h1>
+          
             <form action="/agregar" method="post">
                 <input type="text" name="nombre" placeholder="Nombre">
                 <input type="email" name="email" placeholder="E mail">
+                <input type="number" name="oficina_id" placeholder="Oficina">
+
                 <button type="submit">Agregar</button>
-            </form>
+            </form>       
             <h1> Lista de Persona</h1>
             <div class="container">
                 <% personas.forEach(element => { %>

@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 /*devuelve lista de personas*/
 router.get('/personas',function (req, res, next){
     const db = req.app.get("db");
-    const query = "SELECT * from persona";
+    const query ="SELECT persona.id, persona.nombre, persona.email, oficina.denominacion FROM persona JOIN oficina ON persona.oficina_id = oficina.id";
     db.all(query, function(err, rows) {
         if (err) {
             console.log(err);
@@ -26,8 +26,9 @@ router.post("/agregar",function(req, res, next) {
     const db = req.app.get("db");
     const nombre = req.body.nombre;
     const email = req.body.email;
-    const query = "INSERT into persona (nombre, email) VALUES (?, ?)";
-    db.run(query, [nombre, email], function(err) {
+    const oficina_id = req.body.oficina_id;
+    const query = "INSERT into persona (nombre, email, oficina_id) VALUES (?, ?, ?)";
+    db.run(query, [nombre, email, oficina_id], function(err) {
         if (err) {
             console.log(err);
             return;
@@ -52,8 +53,9 @@ router.post('/update/:id',function(req, res, next) {
     var db = req.app.get('db');
     var id = req.params.id;
     var nombre = req.body.nombre;
-    var email = req.body.email; // Obtén la descripción del formulario
-    db.run("UPDATE persona SET nombre=?, email=? WHERE id=?", [nombre, email, id], function(err) {
+    var email = req.body.email;
+    var oficina_id = req.body.oficina_id // Obtén la descripción del formulario
+    db.run("UPDATE persona SET nombre=?, email=?, oficina_id =? WHERE id=?", [nombre, email,oficina_id, id], function(err) {
         if (err) {
             console.error(err);
             return;
@@ -74,16 +76,16 @@ router.get('/delete/:id', function(req, res, next) {
     });
 });
 router.get('/busqueda', function (req, res, next)  {
-    res.render('busqueda', { title: "Buscar" });
+    res.render('busqueda', { title: "Buscar Persona" });
 });
 
 router.post('/resultados', function (req, res, next) {
     const db = req.app.get("db");
     const keyword = req.body.keyword;
-    const query = 'SELECT * FROM persona WHERE nombre LIKE ?';
+    const query = 'SELECT persona.nombre, persona.email, oficina.denominacion FROM persona JOIN oficina ON persona.oficina_id = oficina.id WHERE nombre LIKE ?';
     db.all(query, [`%${keyword}%`], (err, rows) => {
         if (err) throw err;
-            res.render('resultados', { personas: rows, title: "Resultados" })
+        res.render('resultados', { personas: rows, title: "Resultados encontrados" })
     });
 });
 
