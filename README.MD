@@ -52,7 +52,7 @@ NODE_MODULES
 codigo reutilizable, que son dependenicas que satisface lo que solicita package.json'
 
 ## Reversionado
-Se puede encontrar las versiones en : docker push loreits/crudnodejs:tagname
+Se puede encontrar las versiones en : https://hub.docker.com/repository/docker/loreits/crudnodejs/general 
 o ingresar a https://hub.docker.com/repository/docker/loreits/crudnodejs/general 
 para colaborar con el reversionado del proyecto.
 
