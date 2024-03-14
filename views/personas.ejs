@@ -17,8 +17,8 @@
                 <button type="submit">Agregar</button>
             </form>       
             <h1> Lista de Persona</h1>
-            <div class="container">
-                <% personas.forEach(element => { %>
+                <div class="container">
+                    <% personas.forEach(element => { %>
                     <div class="row">
                         <div class="col-md-3 mt-3">
                             <%= element.nombre %>
@@ -32,18 +32,13 @@
                         <div class="col-md-3 mt-3">
                             <a class="btn btn-primary" href="/edit/<%= element.id %>" role="button">Editar</a>
                             <a class="btn btn-primary" href="/delete/<%= element.id %>" role="button">Borrar</a>
-                            
-
                         </div>
                     </div>
                     <% }) %>
 
-            </div>
+                </div>
 
 
-            <ul>
-
-            </ul>
     </body>
 
 </html>

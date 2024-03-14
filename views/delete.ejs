@@ -5,15 +5,13 @@
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
       </head>
-
-    <body>
-        <h1>Confirma que desea eliminar ese registro?</h1>
+      <body>
         <form action="/delete/<%= item.id %>" method="post">
-            
+            <h1>Desea eliminar este registro de persona?</h1>
             <button type="submit">Confirmar</button>
-            <a class= "btn btn-info" href="/personas"> Cancelar</a>
         </form>
-
+    
     </body>
+    
 
 </html>
